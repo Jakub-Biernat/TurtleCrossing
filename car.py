@@ -12,7 +12,7 @@ class Car(Turtle):
         self.color(color)
         self.move_speed = move_speed
         self.shapesize(stretch_wid=1, stretch_len=2)
-        self.goto(x=STARTING_X, y=randint(-275, 275))
+        self.goto(x=STARTING_X, y=randint(-260, 260))
 
     def move(self):
         new_x = self.xcor() - self.move_speed
