@@ -11,6 +11,7 @@ screen.setup(width=600, height=600)
 screen.tracer(0)
 
 player = Player()
+scoreboard = Scoreboard()
 
 screen.listen()
 screen.onkeypress(player.move, "w")
@@ -22,3 +23,4 @@ while game_is_on:
 
     if player.ycor() > FINISH_LINE_Y:
         player.starting_position()
+        scoreboard.level_up()
