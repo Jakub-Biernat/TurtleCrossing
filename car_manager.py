@@ -36,4 +36,4 @@ class CarManager:
 
     def add_level(self):
         self.movespeed += MOVE_INCREMENT
-        self.spawn_rate -= 0.5
+        self.spawn_rate *= 0.8
