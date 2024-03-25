@@ -4,13 +4,19 @@ from random import randint, choice
 COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5
 MOVE_INCREMENT = 10
+STARTING_CAR_SPAWN_RATE = 3
 
 
 class CarManager:
 
     def __init__(self):
         self.movespeed = STARTING_MOVE_DISTANCE
+        self.spawn_rate = STARTING_CAR_SPAWN_RATE
         self.cars = []
+
+    def car_delivery(self):
+        if randint(0, int(self.spawn_rate)) == 0:
+            self.spawn_car()
 
     def spawn_car(self):
         car_color = choice(COLORS)
@@ -30,3 +36,4 @@ class CarManager:
 
     def add_level(self):
         self.movespeed += MOVE_INCREMENT
+        self.spawn_rate -= 0.5

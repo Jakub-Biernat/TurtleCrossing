@@ -7,7 +7,7 @@ from scoreboard import Scoreboard
 FINISH_LINE_Y = 280
 
 screen = Screen()
-screen.setup(width=1000, height=600)
+screen.setup(width=600, height=600)
 screen.tracer(0)
 screen.title("Turtle Crossing")
 
@@ -24,6 +24,7 @@ while game_is_on:
     time.sleep(0.1)
     screen.update()
 
+    car_manager.car_delivery()
     car_manager.move_cars()
 
     if player.ycor() > FINISH_LINE_Y:
