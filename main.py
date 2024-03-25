@@ -27,8 +27,14 @@ while game_is_on:
     car_manager.car_delivery()
     car_manager.move_cars()
 
+    for car in car_manager.cars:
+        if player.distance(car) < 15:
+
+            game_is_on = False
+
     if player.ycor() > FINISH_LINE_Y:
         player.starting_position()
         scoreboard.level_up()
         car_manager.add_level()
 
+screen.exitonclick()
