@@ -20,7 +20,6 @@ class CarManager:
 
     def spawn_car(self):
         car_color = choice(COLORS)
-        car_move_speed = self.movespeed
         new_car = Car(color=car_color)
         self.cars.append(new_car)
 
