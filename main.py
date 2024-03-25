@@ -7,7 +7,7 @@ from scoreboard import Scoreboard
 FINISH_LINE_Y = 280
 
 screen = Screen()
-screen.setup(width=600, height=600)
+screen.setup(width=1000, height=600)
 screen.tracer(0)
 screen.title("Turtle Crossing")
 
@@ -20,16 +20,11 @@ screen.onkeypress(player.move, "w")
 
 
 game_is_on = True
-car_manager.spawn_car()
 while game_is_on:
     time.sleep(0.1)
     screen.update()
-    car_manager.spawn_car()
-    for car in car_manager.cars:
-        car.move()
-        if car.xcor() < -330:
-            car_manager.cars.remove(car)
-            del car
+
+    car_manager.move_cars()
 
     if player.ycor() > FINISH_LINE_Y:
         player.starting_position()
