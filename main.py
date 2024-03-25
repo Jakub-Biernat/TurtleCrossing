@@ -1,7 +1,7 @@
 import time
 from turtle import Screen
 from player import Player
-from car_manager import CarManager
+from car_manager import CarManager, Car
 from scoreboard import Scoreboard
 
 FINISH_LINE_Y = 280
@@ -9,6 +9,7 @@ FINISH_LINE_Y = 280
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.tracer(0)
+screen.title("Turtle Crossing")
 
 player = Player()
 scoreboard = Scoreboard()
